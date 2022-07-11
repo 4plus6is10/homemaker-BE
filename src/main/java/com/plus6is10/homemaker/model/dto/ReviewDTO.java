@@ -13,11 +13,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ReviewDTO {
     private int reviewSeq;
-    private String reviewerEmail;
     private String asin;
-    private String reviewerName;
-    private String reviewerNickname;
-    private int overall;
-    private String reviewContent;
+    private String name;
     private Date reviewDate;
+    private int rating;
+    private String reviewTitle;
+    private String reviewContent;
 }
