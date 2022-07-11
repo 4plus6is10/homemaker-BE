@@ -10,9 +10,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductDTO {
+    private int seq;
+    private String name;
     private String asin;
-    private String productTitle;
-    private String category;
     private Float price;
     private String buyLink;
+    private String imgLink;
+    private String category;
 }

@@ -16,7 +16,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <package name="com.test.board.front.model"/>
+        <package name="com.plus6is10.homemaker.model.dto"/>
         <package name="com.test.board.admin.model"/>
     </typeAliases>
     <mappers>
