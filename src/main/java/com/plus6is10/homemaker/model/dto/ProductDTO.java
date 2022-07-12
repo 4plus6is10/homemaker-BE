@@ -9,12 +9,14 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class ProductDTO {
     private int seq;
     private String name;
     private String asin;
-    private Float price;
-    private String buyLink;
-    private String imgLink;
+    private float price;
+    private String buylink;
+    private String imglink;
     private String category;
+
 }
