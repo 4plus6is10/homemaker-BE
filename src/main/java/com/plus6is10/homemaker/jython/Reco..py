@@ -1,7 +1,16 @@
-pip install pymysql
+def testFunc():
 
-import pymysql
+    pip install PyMySQL
 
-db = pymysql.connect(host='43.200.48.164', port=3306, user='root', passwd='1234', db='projectdb', charset='utf8')
+    connect = pymysql.connect(host='43.200.48.164', user='root', password='1234', db='projectdb', charset='utf8mb4')
+    cur = connect.cursor()
 
-# print(db)
+
+    query = "SELECT * FROM product limit 5"
+    cur.execute(query)
+    connect.commit()
+
+
+    datas = cur.fetchall()
+    for data in datas:
+        print(data)
