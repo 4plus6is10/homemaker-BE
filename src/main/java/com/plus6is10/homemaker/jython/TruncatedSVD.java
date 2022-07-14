@@ -36,6 +36,7 @@ public class TruncatedSVD {
 
     System.out.println("제대로 연결되었습니다");//성공시 화면에 표시됨
 
+    
         ResultSet rs = stmt.executeQuery("SELECT * FROM `truncatedSVD` where searched_asin = 'B01BWZJ8C2'");
         // int seq;
         String searched_asin;
