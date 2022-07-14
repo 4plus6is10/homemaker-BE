@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Select;
 // import org.springframework.web.bind.annotation.RequestParam;
 
 import com.plus6is10.homemaker.model.dto.ProductDTO;
+import com.plus6is10.homemaker.model.dto.RecommendedProductDTO;
 
 @Mapper
 public interface ProductRepository {
@@ -26,5 +27,11 @@ public interface ProductRepository {
     
     @Select("SELECT * FROM product WHERE name LIKE CONCAT('%', ' ', #{keyword}, ' ', '%') OR name LIKE CONCAT(#{keyword}, ' ', '%') OR name LIKE CONCAT('%', ' ', #{keyword})")
     List<ProductDTO> getProductsByKeyword(String keyword);
+
+    // @Select("SELECT asin FROM product WHERE name = #{name}")
+    // String getAsin(String name);
+
+    @Select("SELECT * FROM content_based WHERE searched_asin = #{searchedAsin}")
+    List<RecommendedProductDTO> getRecommendedProducts(String searchedAsin);
 
 }
