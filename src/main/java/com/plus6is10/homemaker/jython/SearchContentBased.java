@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/jython")
-public class Content {
+public class SearchContentBased {
     
-    @GetMapping("/content")
+    @GetMapping("/searchcontent")
     public static void main(String[] args) {
 
     Connection conn;
@@ -35,20 +35,16 @@ public class Content {
 
     System.out.println("제대로 연결되었습니다");//성공시 화면에 표시됨
 
-        ResultSet rs = stmt.executeQuery("SELECT * FROM `content_based` where searched_asin = 'B01BWZJ8C2'");
+        ResultSet rs = stmt.executeQuery("SELECT searched_asin,  GROUP_CONCAT(asin SEPARATOR ',') AS asin FROM content_based WHERE searched_asin = 'B00004C8S8' GROUP BY searched_asin;");
         // int seq;
         String searched_asin;
-        String asin, name, buylink, imglink, category;
-        Float price;
+        String asin, recommended_asin;
         while(rs.next()){
             searched_asin = rs.getString("searched_asin");
             asin = rs.getString("asin");
-            name = rs.getString("name");
-            price = rs.getFloat("price");
-            buylink = rs.getString("buylink");
-            imglink = rs.getString("imglink");
-            category = rs.getString("imglink");
-            System.out.println(searched_asin+" "+asin+" "+name + " "+ price + " " + buylink +" " + imglink +" " + category);
+            // recommended_asin = rs.getString("recommended_asin");
+
+            System.out.println(searched_asin+" "+asin);
             //System.out.println(no+" "+toUnicode(name)+" "+toUnicode(memo)); // 문자열이 latin1 일때 
         }
         
