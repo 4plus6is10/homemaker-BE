@@ -12,4 +12,6 @@ public interface ProductService {
 
     List<ProductDTO> getProductsByCategory(String category);
 
+    List<ProductDTO> getProductsByKeyword(String keyword);
+
 }
