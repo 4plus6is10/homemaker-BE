@@ -9,5 +9,6 @@ public interface ProductService {
     List<ProductDTO> getAllProducts();
     ProductDTO getOneProduct(String name);
     List<ProductDTO> getProductsByCategory(String category);
+    List<ProductDTO> getProductsByKeyword(String keyword);
     
 }

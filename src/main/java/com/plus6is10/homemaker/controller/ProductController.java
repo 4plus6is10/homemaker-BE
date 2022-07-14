@@ -37,4 +37,8 @@ public class ProductController {
         return productService.getProductsByCategory(category);
     }
 
+    @GetMapping("/keyword")
+    public List<ProductDTO> getProductsByKeyword(@RequestParam String keyword) {
+        return productService.getProductsByKeyword(keyword);
+    }
 }

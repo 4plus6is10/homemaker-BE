@@ -30,8 +30,14 @@ public class ProductServiceImpl implements ProductService{
     
     @Override
     public List<ProductDTO> getProductsByCategory(String category) {
-        List<ProductDTO> productListCategory = productRepository.getProductsByCategory(category);
-        return productListCategory;
+        List<ProductDTO> productList = productRepository.getProductsByCategory(category);
+        return productList;
+    }
+    
+    @Override
+    public List<ProductDTO> getProductsByKeyword(String keyword) {
+        List<ProductDTO> productList = productRepository.getProductsByKeyword(keyword);
+        return productList;
     }
 
 }
