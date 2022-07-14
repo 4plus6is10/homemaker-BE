@@ -11,7 +11,7 @@ import com.plus6is10.homemaker.model.dto.ProductDTO;
 
 @Mapper
 public interface ProductRepository {
-    
+
     @Select("SELECT * FROM product")
     List<ProductDTO> getAllProducts();
 
@@ -21,5 +21,5 @@ public interface ProductRepository {
 
     @Select("SELECT * FROM product WHERE category = #{category}")
     List<ProductDTO> getProductsByCategory(String category);
-    
+
 }

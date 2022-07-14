@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/jython")
-public class Test3 {
-    @GetMapping("/test3")
+public class Content {
     
-
+    
+    @GetMapping("/content")
     public static void main(String[] args) {
 
     Connection conn;
@@ -27,7 +27,7 @@ public class Test3 {
 
     try {
     //String jdbcUrl = "jdbc:mysql://localhost:3306/crm_db?useUnicode=true&useUnicode=true&characterEncoding=euc_kr";//사용하는 데이터베이스명을 포함한 url
-    String jdbcUrl = "jdbc:mysql://43.200.48.164:3306/projectdb";//사용하는 데이터베이스명을 포함한 url
+    String jdbcUrl = "jdbc:mysql://13.125.221.47:3306/projectdb";//사용하는 데이터베이스명을 포함한 url
     String userId = "root";
     String userPass = "1234";
 
@@ -36,14 +36,20 @@ public class Test3 {
 
     System.out.println("제대로 연결되었습니다");//성공시 화면에 표시됨
 
-        ResultSet rs = stmt.executeQuery("SELECT * FROM `product` where category = 'bath'");
-        int seq;
-        String name,asin;
+        ResultSet rs = stmt.executeQuery("SELECT * FROM `content_based` where searched_asin = 'B01BWZJ8C2'");
+        // int seq;
+        String searched_asin;
+        String asin, name, buylink, imglink, category;
+        Float price;
         while(rs.next()){
-            seq = rs.getInt("seq");
-            name = rs.getString("name");
+            searched_asin = rs.getString("searched_asin");
             asin = rs.getString("asin");
-            System.out.println(seq+" "+name+" "+asin);
+            name = rs.getString("name");
+            price = rs.getFloat("price");
+            buylink = rs.getString("buylink");
+            imglink = rs.getString("imglink");
+            category = rs.getString("imglink");
+            System.out.println(searched_asin+" "+asin+" "+name + " "+ price + " " + buylink +" " + imglink +" " + category);
             //System.out.println(no+" "+toUnicode(name)+" "+toUnicode(memo)); // 문자열이 latin1 일때 
         }
         
