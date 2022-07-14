@@ -5,14 +5,14 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-import org.apache.ibatis.annotations.Param;
-import org.springframework.web.bind.annotation.RequestParam;
+// import org.apache.ibatis.annotations.Param;
+// import org.springframework.web.bind.annotation.RequestParam;
 
 import com.plus6is10.homemaker.model.dto.ProductDTO;
 
 @Mapper
 public interface ProductRepository {
-    
+
     @Select("SELECT * FROM product")
     List<ProductDTO> getAllProducts();
 
@@ -22,6 +22,7 @@ public interface ProductRepository {
 
     @Select("SELECT * FROM product WHERE category = #{category}")
     List<ProductDTO> getProductsByCategory(String category);
+
     
     @Select("SELECT * FROM product WHERE name LIKE CONCAT('%', ' ', #{keyword}, ' ', '%') OR name LIKE CONCAT(#{keyword}, ' ', '%') OR name LIKE CONCAT('%', ' ', #{keyword})")
     List<ProductDTO> getProductsByKeyword(String keyword);
