@@ -8,7 +8,7 @@ public class Test2 {
         Connection conn;
 
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://43.200.48.164:3306/projectdb","root","1234");
+            conn = DriverManager.getConnection("jdbc:mysql://3.39.177.19:3306/projectdb","root","1234");
 
             System.out.println("연결 성공");
 
