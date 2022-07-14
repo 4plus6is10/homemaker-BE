@@ -27,7 +27,7 @@ public class Popular {
 
     try {
     //String jdbcUrl = "jdbc:mysql://localhost:3306/crm_db?useUnicode=true&useUnicode=true&characterEncoding=euc_kr";//사용하는 데이터베이스명을 포함한 url
-    String jdbcUrl = "jdbc:mysql://13.125.221.47:3306/projectdb";//사용하는 데이터베이스명을 포함한 url
+    String jdbcUrl = "jdbc:mysql://3.39.177.19:3306/projectdb";//사용하는 데이터베이스명을 포함한 url
     String userId = "root";
     String userPass = "1234";
 
