@@ -23,7 +23,7 @@ public interface ProductRepository {
     List<ProductDTO> getProductsByCategory(String category);
 
     List<ProductDTO> getProductsByKeyword(String keyword);
-
+    
     List<RecommendedProductDTO> getRecommendedProducts(String searchedAsin);
 
 }
