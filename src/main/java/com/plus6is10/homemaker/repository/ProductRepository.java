@@ -18,8 +18,11 @@ public interface ProductRepository {
     List<ProductDTO> getAllProducts();
 
     @Select("SELECT * FROM product WHERE name = #{name}")
-    ProductDTO getOneProduct(String name);
+    List<ProductDTO> getOneProduct(String name);
     // RequestParam("name")
+
+    @Select("SELECT * FROM product WHERE asin = #{asin}")
+    List<ProductDTO> getProductsByAsin(String asin);
 
     @Select("SELECT * FROM product WHERE category = #{category}")
     List<ProductDTO> getProductsByCategory(String category);
