@@ -15,17 +15,22 @@ public class ProductServiceImpl implements ProductService{
     @Autowired
     ProductRepository productRepository;
     
-    @Override
-    public List<ProductDTO> getAllProducts() {
-        List<ProductDTO> productList = productRepository.getAllProducts();
-        return productList;
-
-    }
+    // @Override
+    // public List<ProductDTO> getAllProducts() {
+    //     List<ProductDTO> productList = productRepository.getAllProducts();
+    //     return productList;
+    // }
     
     @Override
-    public ProductDTO getOneProduct(String name) {
-        ProductDTO product = productRepository.getOneProduct(name);
-        return product;
+    public List<ProductDTO> getOneProduct(String name) {
+        List<ProductDTO> productList = productRepository.getOneProduct(name);
+        return productList;
+    }
+
+    @Override
+    public List<ProductDTO> getProductsByAsin(String asin) {
+        List<ProductDTO> productList = productRepository.getProductsByAsin(asin);
+        return productList;
     }
     
     @Override
@@ -39,5 +44,6 @@ public class ProductServiceImpl implements ProductService{
         List<ProductDTO> productList = productRepository.getProductsByKeyword(keyword);
         return productList;
     }
+
 
 }

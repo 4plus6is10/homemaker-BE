@@ -6,14 +6,10 @@ import com.plus6is10.homemaker.model.dto.ProductDTO;
 
 public interface ProductService {
 
-    List<ProductDTO> getAllProducts();
-
-    ProductDTO getOneProduct(String name);
-
+    // List<ProductDTO> getAllProducts();
+    List<ProductDTO> getOneProduct(String name);
     List<ProductDTO> getProductsByCategory(String category);
-
     List<ProductDTO> getProductsByKeyword(String keyword);
-
-    
+    List<ProductDTO> getProductsByAsin(String asin);
 
 }

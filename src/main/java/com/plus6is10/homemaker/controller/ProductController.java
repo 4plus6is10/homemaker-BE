@@ -22,14 +22,19 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping()
-    public List<ProductDTO> getAllProducts() {
-        return productService.getAllProducts();
-    }
+    // @GetMapping()
+    // public List<ProductDTO> getAllProducts() {
+    //     return productService.getAllProducts();
+    // }
 
     @GetMapping("/name")
-    public ProductDTO getOneProduct(@RequestParam String name) {
+    public List<ProductDTO> getOneProduct(@RequestParam String name) {
         return productService.getOneProduct(name);
+    }
+
+    @GetMapping("/asin")
+    public List<ProductDTO> getProductsByAsin(@RequestParam String asin) {
+        return productService.getProductsByAsin(asin);
     }
 
     @GetMapping("/category")
