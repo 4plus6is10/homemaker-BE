@@ -1,6 +1,8 @@
 package com.plus6is10.homemaker.controller;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,12 +17,9 @@ import com.plus6is10.homemaker.service.RecommendedProductService;
 @RequestMapping("recoProducts")
 public class RecommendedProductController {
     
-    private final RecommendedProductService recoProductService;
-
-    public RecommendedProductController(RecommendedProductService recoProductService) {
-        this.recoProductService = recoProductService;
-    }
-
+    @Autowired
+    private RecommendedProductService recoProductService;
+    
     @GetMapping("/asin")
     public List<RecommendedProductDTO> getRecommendedProducts(@RequestParam String searchedAsin) {
         return recoProductService.getRecommendedProducts(searchedAsin);
