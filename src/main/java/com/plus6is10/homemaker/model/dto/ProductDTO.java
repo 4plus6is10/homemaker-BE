@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class ProductDTO {
+
     private int seq;
     private String name;
     private String asin;

@@ -2,6 +2,7 @@ package com.plus6is10.homemaker.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,20 +17,17 @@ import com.plus6is10.homemaker.service.ProductService;
 @RequestMapping("products")
 public class ProductController {
 
-    private final ProductService productService;
-
-    public ProductController(ProductService productService) {
-        this.productService = productService;
+    @Autowired
+    private ProductService productService;
+   
+    @GetMapping()
+    public List<ProductDTO> getAllProducts() {
+        return productService.getAllProducts();
     }
 
-    // @GetMapping()
-    // public List<ProductDTO> getAllProducts() {
-    //     return productService.getAllProducts();
-    // }
-
     @GetMapping("/name")
-    public List<ProductDTO> getOneProduct(@RequestParam String name) {
-        return productService.getOneProduct(name);
+    public List<ProductDTO> getProductsByName(@RequestParam String name) {
+        return productService.getProductsByName(name);
     }
 
     @GetMapping("/asin")
@@ -46,4 +44,5 @@ public class ProductController {
     public List<ProductDTO> getProductsByKeyword(@RequestParam String keyword) {
         return productService.getProductsByKeyword(keyword);
     }
+
 }
