@@ -4,7 +4,7 @@
         
 
 <mapper namespace="com.plus6is10.homemaker.repository.BasketRepository">
-	<insert id="insertBasket" useGeneratedKyes="true" keyProperty="seq">
-        INSERT INTO basket VALUES (#{asin}, #{name}, #{category}, #{price}, #{amount})
+	<insert id="insertBasket" parameterType="BasketDTO" useGeneratedKeys="true" keyProperty="seq">
+        INSERT INTO basket (asin, name, category, price, amount) VALUES (#{asin}, #{name}, #{category}, #{price}, #{amount})
     </insert>
 </mapper>

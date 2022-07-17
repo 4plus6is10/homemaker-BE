@@ -14,7 +14,7 @@ public class BasketServiceImpl implements BasketService {
 
     @Override
     public void insertBasket(BasketDTO basketDTO) {
-        basketRepository.insertBasket(basketDTO.getAsin(), basketDTO.getName(), basketDTO.getCategory(), basketDTO.getPrice(), basketDTO.getAmount());
+        basketRepository.insertBasket(basketDTO);
     }
     
     
