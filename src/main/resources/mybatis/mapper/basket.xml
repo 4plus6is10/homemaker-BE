@@ -4,7 +4,18 @@
         
 
 <mapper namespace="com.plus6is10.homemaker.repository.BasketRepository">
-	<insert id="insertBasket" parameterType="BasketDTO" useGeneratedKeys="true" keyProperty="seq">
-        INSERT INTO basket (asin, name, category, price, amount) VALUES (#{asin}, #{name}, #{category}, #{price}, #{amount})
-    </insert>
+
+        <insert id="insertBasket" parameterType="BasketDTO" useGeneratedKeys="true" keyProperty="seq">
+                INSERT INTO basket (asin, name, category, price, amount) VALUES (#{asin}, #{name}, #{category}, #{price}, #{amount})
+        </insert>
+
+        <select id="getAllBaskets" resultType="BasketDTO">
+		SELECT * FROM basket
+	</select>
+
+        <delete id="deleteBasket">
+	
+		delete from basket where asin = #{asin}
+	
+	</delete>
 </mapper>
