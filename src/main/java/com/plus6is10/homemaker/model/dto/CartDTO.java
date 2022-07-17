@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BasketDTO {
+public class CartDTO {
 
     private int seq;
     private String asin;

@@ -12,30 +12,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.plus6is10.homemaker.model.dto.BasketDTO;
-import com.plus6is10.homemaker.service.BasketService;
+import com.plus6is10.homemaker.model.dto.CartDTO;
+import com.plus6is10.homemaker.service.CartService;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/basket")
-public class BasketController {
+@RequestMapping("/cart")
+public class CartController {
     
     @Autowired
-    private BasketService basketService;
+    private CartService cartService;
 
     @PostMapping()
-    public void insertBasket(@RequestBody BasketDTO basketDTO) {
-        basketService.insertBasket(basketDTO);
+    public void insertBasket(@RequestBody CartDTO cartDTO) {
+        cartService.insertCart(cartDTO);
     }
 
-    @GetMapping("/all")
-    public List<BasketDTO> getAllBaskets() {
-        return basketService.getAllBaskets();
+    @GetMapping()
+    public List<CartDTO> getAllBaskets() {
+        return cartService.getAllCart();
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/asin")
     public void deleteBasket(@RequestParam String asin) {
-        basketService.deleteBasket(asin);
+        cartService.deleteCart(asin);
     }
 
 }
