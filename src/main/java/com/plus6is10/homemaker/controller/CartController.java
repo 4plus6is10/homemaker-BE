@@ -24,17 +24,17 @@ public class CartController {
     private CartService cartService;
 
     @PostMapping()
-    public void insertBasket(@RequestBody CartDTO cartDTO) {
+    public void insertCart(@RequestBody CartDTO cartDTO) {
         cartService.insertCart(cartDTO);
     }
 
     @GetMapping()
-    public List<CartDTO> getAllBaskets() {
+    public List<CartDTO> getAllCart() {
         return cartService.getAllCart();
     }
 
     @DeleteMapping("/asin")
-    public void deleteBasket(@RequestParam String asin) {
+    public void deleteCart(@RequestParam String asin) {
         cartService.deleteCart(asin);
     }
 
