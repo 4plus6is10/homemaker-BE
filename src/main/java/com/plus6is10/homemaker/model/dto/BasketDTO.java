@@ -1,7 +1,5 @@
 package com.plus6is10.homemaker.model.dto;
 
-import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,12 +9,13 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReviewDTO {
-    private int reviewSeq;
+public class BasketDTO {
+
+    private int seq;
     private String asin;
     private String name;
-    private Date reviewDate;
-    private int rating;
-    private String reviewTitle;
-    private String reviewContent;
+    private String category;
+    private float price;
+    private int amount;
+
 }
