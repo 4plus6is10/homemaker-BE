@@ -1,13 +1,7 @@
 package com.plus6is10.homemaker.repository;
 
 import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-
-import org.apache.ibatis.annotations.Param;
-// import org.springframework.web.bind.annotation.RequestParam;
-
 import com.plus6is10.homemaker.model.dto.ProductDTO;
 import com.plus6is10.homemaker.model.dto.RecommendedProductDTO;
 
@@ -23,7 +17,7 @@ public interface ProductRepository {
     List<ProductDTO> getProductsByCategory(String category);
 
     List<ProductDTO> getProductsByKeyword(String keyword);
-
+    
     List<RecommendedProductDTO> getRecommendedProducts(String searchedAsin);
 
 }
