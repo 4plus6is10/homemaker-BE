@@ -20,6 +20,11 @@ public class RecommendedProductController {
     @Autowired
     private RecommendedProductService recoProductService;
     
+    // @GetMapping("/asin")
+    // public String getRecommendedProducts(@RequestParam String searchedAsin) {
+    //     return recoProductService.getRecommendedProducts(searchedAsin);
+    // }
+
     @GetMapping("/asin")
     public List<RecommendedProductDTO> getRecommendedProducts(@RequestParam String searchedAsin) {
         return recoProductService.getRecommendedProducts(searchedAsin);
