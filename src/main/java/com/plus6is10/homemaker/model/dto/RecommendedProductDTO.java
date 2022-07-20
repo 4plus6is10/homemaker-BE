@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 
 public class RecommendedProductDTO {
     
-    // private int seq;
     private String searched_asin;
     private String asin;
     private String name;
