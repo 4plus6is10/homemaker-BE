@@ -10,14 +10,14 @@ public interface ProductRepository {
 
     List<ProductDTO> getAllProducts();
 
-    List<ProductDTO> getProductsByName(String name);  // Param("name")
+    List<ProductDTO> getProductsByName(String name);
 
     List<ProductDTO> getProductsByAsin(String asin);
 
     List<ProductDTO> getProductsByCategory(String category);
 
     List<ProductDTO> getProductsByKeyword(String keyword);
-    
+
     List<RecommendedProductDTO> getRecommendedProducts(String searchedAsin);
 
 }

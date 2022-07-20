@@ -16,14 +16,9 @@ import com.plus6is10.homemaker.service.RecommendedProductService;
 @RestController
 @RequestMapping("recoProducts")
 public class RecommendedProductController {
-    
+
     @Autowired
     private RecommendedProductService recoProductService;
-    
-    // @GetMapping("/asin")
-    // public String getRecommendedProducts(@RequestParam String searchedAsin) {
-    //     return recoProductService.getRecommendedProducts(searchedAsin);
-    // }
 
     @GetMapping("/asin")
     public List<RecommendedProductDTO> getRecommendedProducts(@RequestParam String searchedAsin) {
