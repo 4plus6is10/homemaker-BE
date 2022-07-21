@@ -2,19 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
         
-
 <mapper namespace="com.plus6is10.homemaker.repository.CartRepository">
-
-        <insert id="insertCart" parameterType="CartDTO" useGeneratedKeys="true" keyProperty="seq">
-                INSERT INTO cart (asin, name, category, price, amount) VALUES (#{asin}, #{name}, #{category}, #{price}, #{amount})
-        </insert>
-
-        <select id="getAllCart" resultType="CartDTO">
+	<insert id="insertCart" parameterType="CartDTO" useGeneratedKeys="true" keyProperty="seq">
+	    INSERT INTO cart (asin, name, category, price, amount) VALUES (#{asin}, #{name}, #{category}, #{price}, #{amount})
+	</insert>
+	<select id="getAllCart" resultType="CartDTO">
 		SELECT * FROM cart
 	</select>
-
-        <delete id="deleteCart">
+	<select id="getAmount" resultType="_int">
+		SELECT count(*) FROM cart WHERE asin = #{asin}
+	</select>
+	<update id="plusAmount" parameterType="CartDTO">
+		UPDATE cart SET amount = amount + #{amount} WHERE asin = #{asin}
+	</update>
+	<delete id="deleteCart">
 		DELETE FROM cart WHERE asin = #{asin}
 	</delete>
-        
 </mapper>

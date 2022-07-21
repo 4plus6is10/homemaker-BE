@@ -1,13 +1,10 @@
 package com.plus6is10.homemaker.service;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-// import org.springframework.web.bind.annotation.RequestParam;
-
-import com.plus6is10.homemaker.model.dto.ProductDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import com.plus6is10.homemaker.repository.ProductRepository;
+import com.plus6is10.homemaker.model.dto.ProductDTO;
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -44,6 +41,5 @@ public class ProductServiceImpl implements ProductService{
         List<ProductDTO> productList = productRepository.getProductsByKeyword(keyword);
         return productList;
     }
-
 
 }
